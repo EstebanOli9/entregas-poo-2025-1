@@ -1,0 +1,37 @@
+¿Cuántos productos desea ingresar? 3  
+
+Ingrese los datos del producto 1:  
+Nombre del producto: Lapicero  
+Precio unitario: 1500  
+Cantidad disponible: 50  
+Descripción del producto: Bolígrafo de tinta azul  
+Clasificación del producto: Papelería  
+
+Ingrese los datos del producto 2:  
+Nombre del producto: Cuaderno  
+Precio unitario: 4500  
+Cantidad disponible: 30  
+Descripción del producto: Cuaderno de 100 hojas cuadriculadas  
+Clasificación del producto: Papelería  
+
+Ingrese los datos del producto 3:  
+Nombre del producto: Calculadora  
+Precio unitario: 25000  
+Cantidad disponible: 10  
+Descripción del producto: Calculadora científica  
+Clasificación del producto: Electrónica  
+
+> Resumen del Inventario:  
+------------------------------------------------------------  
+| Producto    | Cantidad | Precio  | Clasificación  |  
+------------------------------------------------------------  
+| Lapicero    |   50 unidades | 1,500 pesos | Papelería     |  
+| Cuaderno    |   30 unidades | 4,500 pesos | Papelería     |  
+| Calculadora |   10 unidades | 25,000 pesos | Electrónica  |  
+------------------------------------------------------------  
+
+> Resumen por Clasificación:  
+----------------------------------------  
+| Papelería       | Total: 225,000 pesos |  
+| Electrónica     | Total: 250,000 pesos |  
+----------------------------------------  
