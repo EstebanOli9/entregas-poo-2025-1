@@ -1,0 +1,13 @@
+productos = [
+    Producto("Lapicero", 1500, 50, "Bolígrafo de tinta azul", "Papelería"),
+    Producto("Cuaderno", 4500, 30, "Cuaderno de 100 hojas cuadriculadas", "Papelería"),
+    Producto("Calculadora", 25000, 10, "Calculadora científica", "Electrónica")
+    | Producto    | Cantidad     | Precio     | Clasificación  | Total en inventario | Precio x5 unidades |
+|------------|------------|------------|----------------|---------------------|--------------------|
+| Lapicero    | 50 unidades | 1,500 pesos | Papelería      | 75,000 pesos        | 7,500 pesos       |
+| Cuaderno    | 30 unidades | 4,500 pesos | Papelería      | 135,000 pesos       | 22,500 pesos      |
+| Calculadora | 10 unidades | 25,000 pesos | Electrónica   | 250,000 pesos       | 125,000 pesos     |
+| Clasificación | Precio total (5 unidades) |
+|--------------|--------------------------|
+| Papelería    | 30,000 pesos             |
+| Electrónica  | 125,000 pesos            |
