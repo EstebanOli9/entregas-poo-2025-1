@@ -1,0 +1,18 @@
+Producto 1, ¿cuál es el nombre? Marcador  
+¿Qué precio tiene Marcador? 2500  
+¿Qué cantidad hay de Marcador? 63  
+
+Producto 2, ¿cuál es el nombre? Cuadernos  
+¿Qué precio tiene Cuadernos? 2500  
+¿Qué cantidad hay de Cuadernos? 147  
+
+Producto 3, ¿cuál es el nombre? Sacapuntas  
+¿Qué precio tiene Sacapuntas? 500  
+¿Qué cantidad hay de Sacapuntas? 133  
+
+Resumen:
+|Producto  |Cantidad     |Precio     |
+------------------------------------
+|Marcador  |63 unidades  |2500 pesos |
+|Cuadernos |147 unidades |2500 pesos |
+|Sacapuntas|133 unidades |500 pesos  |
