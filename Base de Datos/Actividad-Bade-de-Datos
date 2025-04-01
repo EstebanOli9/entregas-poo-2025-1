@@ -1,0 +1,29 @@
+CREATE DATABASE Teatro;
+use Teatro;
+create table teatro(
+id int,
+nombreFuncion varchar(45),
+genero varchar(35),
+sala int,
+fecha date);
+
+
+insert into funcion values
+(01, 'Hamlet', 'Trageida, Drama', 02, "2025-03-29");
+insert into funcion values
+(02, 'Romeo y Julieta', 'Trageida', 04, "2025-03-29");
+insert into funcion values
+(03, 'La Vida es Sueño', 'Drama', 03, "2025-03-29");
+insert into funcion values
+(04, 'La Celestina', 'Tragicomedia', 03, "2025-03-30");
+insert into funcion values
+(05, 'Sueño de una Noche de Verano', 'Comedia', 02, "2025-03-30");
+insert into funcion values
+(06, 'El Fantasma de la Ópera', 'Terror', 04, "2025-03-30");
+
+alter table funcion add column (formato varchar(10));
+alter table funcion add column (clasificacion varchar(18));
+
+update funcion set clasificacion = 'Mayores de 12 años' where id = 4;
+update funcion set clasificacion = 'Mayores de 18 años' where id = 6;
+update funcion set clasificacion = 'Mayores de 15 años' where id = 3;
