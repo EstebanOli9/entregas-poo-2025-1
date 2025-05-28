@@ -1,6 +1,6 @@
 #Título de práctica: GUIHello
-#Autor: Esteban Olivero Cubides
-#<eoliveroc@academia.usbbog.edu.co>
+#Autor: Isaac Alfonso Rodriguez
+#<ialfonsor@academia.usbbog.edu.co>
 
 import tkinter as tk
 from tkinter import messagebox
