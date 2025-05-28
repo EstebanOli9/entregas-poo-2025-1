@@ -1,0 +1,28 @@
+class Matriz:
+    def __init__(self, valores):
+        self.valores = valores
+
+    def __add__(self, otra):
+        resultado = []
+        for fila1, fila2 in zip(self.valores, otra.valores):
+            fila_suma = [a + b for a, b in zip(fila1, fila2)]
+            resultado.append(fila_suma)
+        return Matriz(resultado)
+
+
+def test_suma():
+    """Test unitario para verificar la suma de dos matrices."""
+    m1 = Matriz([[1, 2], [3, 4]])
+    m2 = Matriz([[5, 6], [7, 8]])
+    resultado = m1 + m2
+    assert resultado.valores == [[6, 8], [10, 12]], "Error en la suma de matrices"
+    print("✅ Test de suma: OK")
+
+
+def main():
+    print("Programa principal ejecutado.")
+
+
+if __name__ == "__main__":
+    test_suma()
+    main()
