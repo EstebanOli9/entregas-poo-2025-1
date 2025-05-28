@@ -1,88 +1,62 @@
+"""
+Esteban Olivero Cubides
+eoliveroc@academia.usbbog.edu.co
+"""
+
+
 from datetime import datetime
 
+class InfoAnimal:
+    """Clase base para visualizar información"""
+    def mostrar_resumen(self):
+        datos = self.obtener_datos()
+        print(f"{datos[0]:<10} {datos[1]:<15} {datos[2]:<10} {datos[3]:<18} {datos[4]:<25}")
 
-"""
-Práctica de clase: Tienda1
-
-Este programa maneja el inventario de una tienda.
-
-Heyder Ivan Ramos Rodriguez
-<hiramosr@academia.usbbog.edu.co
- heydercolegious@gmail.com>
-2025-04-26
-"""
-
-
-class Visualizador:
-    """Agregamos la clase visualizador"""
-    def resumen(self):
-        datos = self.mostrar_datos()
-        print(
-            f"{datos[0]:<8} {datos[1]:<12} {datos[2]:<8}"
-            f"{datos[3]:<20} {datos[4]:<20}"
-            )
-
-
-class Mascotas(Visualizador):
+class Animal(InfoAnimal):
     def __init__(self, nombre, edad, raza):
         super().__init__()
         self.nombre = nombre
         self.edad = edad
         self.raza = raza
-        self.fecha_ingreso = datetime.now().isoformat()
+        self.fecha_registro = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    def mostrar_datos(self):
-        return [self.especie, self.nombre, str(self.edad) + " años",
-                self.raza, self.fecha_ingreso]
+    def obtener_datos(self):
+        return [self.tipo, self.nombre, f"{self.edad} años", self.raza, self.fecha_registro]
 
-
-class Perro(Mascotas):
-    """Clases que heredan de Mascotas"""
+class Canino(Animal):
     def __init__(self, nombre, edad, raza):
         super().__init__(nombre, edad, raza)
-        self.especie = "Perro"
+        self.tipo = "Perro"
 
-
-class Gato(Mascotas):
+class Felino(Animal):
     def __init__(self, nombre, edad, raza):
         super().__init__(nombre, edad, raza)
-        self.especie = "Gato"
+        self.tipo = "Gato"
 
+# Lista para almacenar objetos animales
+registro_animales = []
 
-mascotas = []  # Lista que almacena las mascotas ingresadas
+cantidad = int(input("¿Cuántos animales desea registrar?\n> "))
 
-numero_mascotas = int(input("> ¿Cuantas mascotas va a ingresar? \n"))
+for n in range(cantidad):
+    print(f"\nRegistro {n + 1}")
+    categoria = input("¿Es un (P)erro o un (G)ato?\n> ").lower().strip()
 
-for i in range(1, numero_mascotas + 1):
-    print(f"> Mascota {i}, que clase es? (P)erro o (G)ato")
-    tipo = input("< ").strip().lower()  # Toma de igual manera
-    # mayusculas y minusculas
+    while categoria not in ["p", "g", "perro", "gato"]:
+        print("Entrada no válida. Intente con 'Perro' o 'Gato'.")
+        categoria = input("> ").lower().strip()
 
-    while tipo not in ("p", "g", "perro", "gato"):
-        # Si no es ninguno no validara
-        print("> Opción invalida. ¿Perro o Gato?")
-        tipo = input("< ").strip().lower()
+    nombre = input("Nombre del animal:\n> ").strip()
+    edad = int(input(f"Edad en años de {nombre}:\n> ").strip())
+    raza = input(f"Raza de {nombre}:\n> ").strip()
 
-    if tipo in ("p", "perro"):
-        clase = "Perro"
+    if categoria.startswith("p"):
+        animal = Canino(nombre, edad, raza)
     else:
-        clase = "Gato"
+        animal = Felino(nombre, edad, raza)
 
-    print(f"> ¿Cual es el nombre del {clase}?")
-    nombre = input("< ").strip()
+    registro_animales.append(animal)
 
-    print(f"> ¿Que edad tiene {nombre}?")
-    edad = int(input("< ").strip())
-
-    print(f"> ¿Que raza es {nombre}?")
-    raza = input("< ").strip()
-
-    if clase == "Perro":
-        mascota = Perro(nombre, edad, raza)
-    else:
-        mascota = Gato(nombre, edad, raza)
-
-    mascotas.append(mascota)
-
-for mascota in mascotas:
-    mascota.resumen()
+print("\n--- Resumen de animales registrados ---\n")
+for a in registro_animales:
+    a.mostrar_resumen()
